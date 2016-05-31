@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div class="row">
 
   <h1>Listing Invoices</h1>
@@ -30,7 +29,8 @@
               <td><%= invoice.date.strftime("%Y-%m-%d") %></td>
               <td><%= invoice.company %></td>
               <td><%= invoice.tax %></td>
-              <td><%= invoice.salesperson %></td>
+              <td><%= invoice.employee_id %></td>
+
               <td><%= link_to 'Show', invoice, class: 'btn btn-mini' %></td>
               <td><%= link_to 'Edit', edit_invoice_path(invoice), class: 'btn btn-mini btn-success' %></td>
               <td><%= link_to 'Destroy', invoice, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
