@@ -18,7 +18,7 @@ class PurchasesControllerTest < ActionController::TestCase
 
   test "should create purchase" do
     assert_difference('Purchase.count') do
-      post :create, purchase: { category: @purchase.category, name: @purchase.name, quantity: @purchase.quantity }
+      post :create, purchase: { category: @purchase.category, invoice_id: @purchase.invoice_id, name: @purchase.name, quantity: @purchase.quantity }
     end
 
     assert_redirected_to purchase_path(assigns(:purchase))
@@ -35,7 +35,7 @@ class PurchasesControllerTest < ActionController::TestCase
   end
 
   test "should update purchase" do
-    patch :update, id: @purchase, purchase: { category: @purchase.category, name: @purchase.name, quantity: @purchase.quantity }
+    patch :update, id: @purchase, purchase: { category: @purchase.category, invoice_id: @purchase.invoice_id, name: @purchase.name, quantity: @purchase.quantity }
     assert_redirected_to purchase_path(assigns(:purchase))
   end
 
