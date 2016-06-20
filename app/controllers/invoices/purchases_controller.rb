@@ -1,5 +1,4 @@
-class PurchasesController < ApplicationController
-  before_action :set_purchase, only: [:show, :edit, :update, :destroy]
+class Invoices::PurchasesController < ApplicationController
 
   # GET /purchases
   # GET /purchases.json
@@ -32,11 +31,11 @@ class PurchasesController < ApplicationController
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
-        format.json { render :show, status: :created, location: @purchase }
+        format.html { redirect_to @invoice, notice: 'Purchase was successfully created.' }
+        format.json { render :show, status: :created, location: @invoice }
       else
         format.html { render :new }
-        format.json { render json: @purchase.errors, status: :unprocessable_entity }
+        format.json { render json: @invoice.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -73,6 +72,6 @@ class PurchasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def purchase_params
-      params.require(:purchase).permit(:name, :category, :quantity, :invoice_id,:price)
+      params.require(:purchase).permit(:name, :category, :quantity, :invoice_id, :price)
     end
 end
